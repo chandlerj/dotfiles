@@ -30,14 +30,16 @@ fi
 unset rc
 . "$HOME/.cargo/env"
 
-alias vim="nvim"
 
-
+# Grabs the current branch if directory is git repository
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-#PS1="\[$(tput setaf 168)\]\u\[$(tput setaf 134)\]@\[$(tput setaf 74)\]\h \[$(tput setaf 164)\]\w \[$(tput sgr0)\]\$(parse_git_branch)$ "
+# Sets custom bash prompt
+PS1="\[$(tput setaf 168)\]\u\[$(tput setaf 134)\]@\h \[$(tput setaf 74)\]\w\[$(tput setaf 164)\]\$(parse_git_branch)\[$(tput sgr0)\]$ "
 
-PS1="\[$(tput setaf 168)\]\u\[$(tput setaf 134)\]@\h \[$(tput setaf 74)\]\w\[$(tput setaf 164)\]\$(parse_git_branch)\[$(tput sgr0)\]$"
 
+# Custom Alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias vim="nvim"
+alias ks = "ls"
