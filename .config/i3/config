@@ -205,11 +205,11 @@ exec_always picom --config ~/.config/picom/picom.conf
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# display wallpapr
-exec_always feh --bg-fill ~/Documents/gradient_scale.png
+# display wallpaper
+exec_always feh --bg-fill ~/Pictures/pspvibes.jpg
 
 #lock screen
-bindsym $mod+x exec i3lock -u -i ~/Documents/gradient_scale.png
+bindsym $mod+x exec i3lock -u -i ~/Pictures/pspvibes.jpg
 
 set $screenshot_path "/home/$USER/Pictures/$(date).png"
 ## Screenshots

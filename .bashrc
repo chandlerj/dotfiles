@@ -41,5 +41,6 @@ PS1="\[$(tput setaf 168)\]\u\[$(tput setaf 134)\]@\h \[$(tput setaf 74)\]\w\[$(t
 
 # Custom Alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias vim="nvim"
-alias ks = "ls"
+alias vim='nvim'
+alias ks='ls'
+alias py='python3'
