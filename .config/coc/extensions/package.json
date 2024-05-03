@@ -1,8 +1,13 @@
 {
   "dependencies": {
-    "coc-clangd": ">=0.29.3",
+    "coc-clangd": ">=0.30.1",
     "coc-rust-analyzer": ">=0.75.0",
     "coc-vimtex": ">=1.1.5",
-    "coc-cl": ">=0.2.1"
+    "coc-cl": ">=0.2.1",
+    "coc-pyright": ">=1.1.348",
+    "coc-tsserver": ">=2.2.0",
+    "coc-eslint": ">=1.7.0",
+    "coc-tslint-plugin": ">=1.2.0",
+    "coc-tslint": ">=1.0.17"
   }
 }
