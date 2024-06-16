@@ -7,7 +7,7 @@ fi
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-
+export BROWSER=firefox
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then

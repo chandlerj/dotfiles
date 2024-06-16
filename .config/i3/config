@@ -82,7 +82,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # A more modern dmenu replacement is rofi:
 #bindsym $mod+d exec "rofi -modi drun,run -show drun"
-bindsym $mod+d exec --no-startup-id dmenu_run -nb '#090d10' -sf '#F6F2EF' -sb '#3d242a' -nf '#C2DBD5'
+bindsym $mod+d exec --no-startup-id dmenu_run -c -i -nb '#090d10' -sf '#F6F2EF' -sb '#3d242a' -nf '#C2DBD5'
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -182,6 +182,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
+# show bookmark dmenu utility
+bindsym $mod+b exec bmks show
+bindsym $mod+Shift+b exec bmks del
+
+# clipboard
+bindsym $mod+c exec clipmenu -i -nb '$bgcolor' -sf '$text' -sb '$in-bgcolor' -nf '$text'
+
 # scratchpad
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -215,7 +222,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # launch compisitor
-exec_always picom --config ~/.config/picom/picom.conf 
+exec_always picom -b --config ~/.config/picom/picom.conf 
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

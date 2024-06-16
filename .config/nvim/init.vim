@@ -4,7 +4,6 @@ call plug#begin()
     Plug 'tmsvg/pear-tree',
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'preservim/nerdtree'
     Plug 'lervag/vimtex'
     Plug 'pangloss/vim-javascript'
     Plug 'rebelot/kanagawa.nvim'
@@ -27,12 +26,12 @@ set tabstop=4
 set shiftwidth=4
 set expandtab	" spaces instead of tabs 
 set noshowmode
-colorscheme default
+colorscheme lunaperche
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
 inoremap <c-b> <Esc>:NERDTreeToggle<cr>
 nnoremap <c-b> <Esc>:NERDTreeToggle<cr>
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'base16_embers'
 let g:vimtex_quickfix_enabled = 1
 let g:vimtex_quickfix_ignore_filters = [
             \ 'Underfull',
