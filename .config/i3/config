@@ -8,7 +8,107 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 set $lockimg /home/chandler/.config/i3/lock.png
-set $bgimage /home/chandler/Pictures/papes/redblue.jpg
+set $bgimage0 /home/chandler/Pictures/papes/brush.jpg
+set $bgimage1 /home/chandler/Pictures/papes/rain.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -37,12 +137,12 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 1080x509 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate left --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
 
 # Color shemes for windows 
-set $bgcolor #090d10
-set $in-bgcolor #3d242a
-set $text #F6F2EF
+set $bgcolor #141519
+set $in-bgcolor #2b3234
+set $text #EBEAE6
 set $u-bgcolor  #ff0000
-set $indicator #13556b
-set $in-text #C2DBD5
+set $indicator #1f2326
+set $in-text #D4CDCB
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
 client.focused          $bgcolor        $bgcolor        $text           $indicator
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
@@ -82,7 +182,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # A more modern dmenu replacement is rofi:
 #bindsym $mod+d exec "rofi -modi drun,run -show drun"
-bindsym $mod+d exec --no-startup-id dmenu_run -c -i -nb '#090d10' -sf '#F6F2EF' -sb '#3d242a' -nf '#C2DBD5'
+bindsym $mod+d exec --no-startup-id dmenu_run -c -i -nb '#141519' -sf '#EBEAE6' -sb '#2b3234' -nf '#D4CDCB'
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -227,7 +327,8 @@ exec_always picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # display wallpaper
-exec_always feh --bg-fill $bgimage --bg-fill /home/chandler/Pictures/lines-inv.png
+exec_always feh --bg-fill $bgimage0 --bg-fill $bgimage1
+# --bg-fill $bgimage1
 
 #lock screen
 bindsym $mod+x exec i3lock -u -i $lockimg
