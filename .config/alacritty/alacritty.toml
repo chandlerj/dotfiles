@@ -1,0 +1,10 @@
+[font]
+normal.family = "DM Mono"
+bold.family = "DM Mono"
+italic.family = "DM Mono"
+bold_italic.family = "DM Mono"
+
+size = 10.0
+
+[window]
+opacity=1.00
