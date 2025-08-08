@@ -101,7 +101,7 @@ output "eDP-1" {
 }
 
 overview{
-    backdrop-color "#2b303b"
+    backdrop-color "#64727D"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -258,8 +258,6 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -274,9 +272,6 @@ spawn-at-startup "xwayland-satellite"
 environment {
     DISPLAY ":0"
 }
-
-// start notification daemon at startup
-spawn-at-startup "mako"
 
 // set desktop background at startup
 spawn-at-startup "swaybg" "-i" "/home/chandler/Pictures/papes/moss.jpg"
@@ -602,4 +597,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+
+hotkey-overlay {
+    skip-at-startup
 }
