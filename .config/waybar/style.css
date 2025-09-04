@@ -1,13 +1,12 @@
 * {
     border: none;
-    border-radius: 0 0 0 0;
     font-family: Noto Sans, Helvetica, Arial, sans-serif;
+    margin: 2px 2px 0px 2px;
     font-size: 14px;
-    min-height: 0;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 1.0);
+    background: transparent;
     color: white;
 }
 
@@ -29,6 +28,17 @@ tooltip label {
     background: #64727D;
 }
 
+#workspaces, #window, #clock, #idle_inhibitor, #pulseaudio, #network, #cpu, #memory, #temperature, #battery, #backlight{
+    padding: 3px;
+    border-radius: 8px;
+    background: rgba(43, 48, 59, 1.0);
+}
+
+/* Style the module when empty */
+window#waybar.empty #window {
+  opacity: 0.0;           /* visual hint only */
+}
+
 #mode, #clock  {
     padding: 0 10px;
 }
@@ -40,16 +50,6 @@ tooltip label {
 #mode {
     background: #64727D;
     border-bottom: 3px solid white;
-}
-
-#clock {
-    
-}
-
-#battery {
-}
-
-#battery.charging {
 }
 
 @keyframes blink {
