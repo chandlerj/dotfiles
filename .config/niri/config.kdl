@@ -60,7 +60,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="80%"
+    focus-follows-mouse max-scroll-amount="20%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -108,6 +108,7 @@ overview{
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    background-color "#000000"
     // Set gaps around windows in logical pixels.
     gaps 10
 
@@ -274,7 +275,6 @@ environment {
 }
 
 // set desktop background at startup
-spawn-at-startup "swaybg" "-i" "/home/chandler/Pictures/papes/moss.jpg"
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.

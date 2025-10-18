@@ -3,10 +3,11 @@
     font-family: Noto Sans, Helvetica, Arial, sans-serif;
     margin: 2px 2px 0px 2px;
     font-size: 14px;
+    opacity: 0.95;
 }
 
 window#waybar {
-    background: transparent;
+    background: #000000;
     color: white;
 }
 
@@ -31,7 +32,6 @@ tooltip label {
 #workspaces, #window, #clock, #idle_inhibitor, #pulseaudio, #network, #cpu, #memory, #temperature, #battery, #backlight{
     padding: 3px;
     border-radius: 8px;
-    background: rgba(43, 48, 59, 1.0);
 }
 
 /* Style the module when empty */

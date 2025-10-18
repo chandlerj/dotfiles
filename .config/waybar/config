@@ -106,9 +106,9 @@
             "critical": 5
         },
         "format": " bat {capacity}%",
-        "format-full": "bat full",
-        "format-charging": "crg {capacity}%",
-        "format-plugged": "not charging {capacity}%",
+        "format-full": " bat full",
+        "format-charging": " crg {capacity}%",
+        "format-plugged": " not charging {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
