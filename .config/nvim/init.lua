@@ -25,7 +25,11 @@ require("lazy").setup({
   spec = {
     -- add your plugins here
     { 'neoclide/coc.nvim', branch = 'release' },
-    'NLKNguyen/papercolor-theme',
+    { 
+        'NLKNguyen/papercolor-theme',
+        lazy=false,
+        priority=1000,
+    },
     'tmsvg/pear-tree',
     'lervag/vimtex',
     'pangloss/vim-javascript',
@@ -63,7 +67,7 @@ require("transparent").setup({
 
 -- General settings
 
-vim.cmd [[colorscheme habamax]]        -- Set colorscheme
+vim.cmd [[colorscheme PaperColor]]        -- Set colorscheme
 vim.opt.termguicolors = true
 vim.opt.number = true              -- Line numbers
 vim.opt.showmatch = true           -- Show matching parentheses
