@@ -19,6 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "-"
+vim.g.pear_tree_map_special_keys = 0
+
+vim.opt.termguicolors = true
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -66,9 +69,8 @@ require("transparent").setup({
 })
 
 -- General settings
-
-vim.cmd [[colorscheme PaperColor]]        -- Set colorscheme
-vim.opt.termguicolors = true
+vim.o.background = "dark"  -- or "light"
+vim.cmd.colorscheme("PaperColor")
 vim.opt.number = true              -- Line numbers
 vim.opt.showmatch = true           -- Show matching parentheses
 vim.opt.mouse = 'a'                -- Enable mouse navigation
@@ -104,7 +106,7 @@ function _G.mode_str()
 end
 
 -- Set up the statusline
-vim.o.statusline = "[%{%v:lua.mode_str()%}] [%f] %m %= %y [%l:%c] [%p%%]"
+vim.o.statusline = "[%{%v:lua.mode_str()%}] [%f] %m %= [%{coc#status()}%{get(b:,'coc_current_function','')}] %y [%l:%c] [%p%%]"
 
 -- Tab behavior in insert mode
 vim.keymap.set('i', '<TAB>', function()
@@ -132,6 +134,7 @@ vim.g.startify_custom_header = vim.fn['startify#pad'](vim.split(vim.fn.system(he
 
 -- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COC CONFIGURATION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 -- https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.lua
+
 
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
@@ -163,8 +166,7 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice
-keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
-
+keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<Plug>(PearTreeExpand)"]], {silent = true, noremap = false, expr = true, replace_keycodes = false})
 -- Use <c-j> to trigger snippets
 keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
 -- Use <c-space> to trigger completion
@@ -287,7 +289,7 @@ vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'edito
 -- Add (Neo)Vim's native statusline support
 -- NOTE: Please see `:h coc-status` for integrations with external plugins that
 -- provide custom statusline: lightline.vim, vim-airline
-vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
+-- vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
 -- Mappings for CoCList
 -- code actions and coc stuff
